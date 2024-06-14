@@ -23,8 +23,7 @@ import {
 import Footer from './components/footer';
 import SignInButton from './components/sign-in-button';
 
-import { getSignInUrl } from './.server/auth';
-import { terminateSession, withAuth } from './.server/session';
+import { withAuth, getSignInUrl, signOut } from '@workos-inc/authkit-remix';
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
@@ -46,7 +45,8 @@ export function useRootLoaderData() {
 }
 
 export async function action({ request }: ActionFunctionArgs) {
-  return await terminateSession(request);
+  // Called when the form in SignInButton is submitted
+  return await signOut(request);
 }
 
 export default function App() {

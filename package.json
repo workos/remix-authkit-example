@@ -6,10 +6,13 @@
   "type": "module",
   "scripts": {
     "build": "remix build",
-    "dev": "remix dev --manual",
+    "dev": "remix dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "reset": "rm -rf node_modules && rm -rf .cache && npm i",
+    "start-local-dev": "rm -rf .cache && npm run prepare && npm run dev",
     "start": "remix-serve ./build/index.js",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "prepare": "relative-deps"
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
@@ -18,6 +21,7 @@
     "@remix-run/node": "^2.7.2",
     "@remix-run/react": "^2.7.2",
     "@remix-run/serve": "^2.7.2",
+    "@workos-inc/authkit-remix": "0.1.0",
     "@workos-inc/node": "^7.10.0",
     "iron-session": "^8.0.1",
     "isbot": "^4.1.0",
@@ -36,9 +40,11 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "relative-deps": "^1.0.7",
     "typescript": "^5.1.6"
   },
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "relativeDependencies": {}
 }

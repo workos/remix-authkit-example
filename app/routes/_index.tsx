@@ -3,7 +3,7 @@ import { Button, Flex, Heading, Text } from '@radix-ui/themes';
 import { Link } from '@remix-run/react';
 import SignInButton from '~/components/sign-in-button';
 import { useRootLoaderData } from '~/root';
-import { signOut } from '~/.server/auth';
+import { signOut } from '@workos-inc/authkit-remix';
 
 export const meta: MetaFunction = () => {
   return [
@@ -16,6 +16,7 @@ export const meta: MetaFunction = () => {
 };
 
 export async function action({ request }: ActionFunctionArgs) {
+  // Called when the form in SignInButton is submitted
   return await signOut(request);
 }
 

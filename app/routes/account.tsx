@@ -2,9 +2,11 @@ import { Text, Heading, TextField, Flex, Box } from '@radix-ui/themes';
 
 import { LoaderFunctionArgs } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
-import { withAuth } from '~/.server/session';
+import { withAuth } from '@workos-inc/authkit-remix';
 
 export async function loader({ request }: LoaderFunctionArgs) {
+  // Make sure that the user is signed in before rendering this page
+  // If they aren't, the below will automatically redirect the user to AuthKit
   return await withAuth(request, { ensureSignedIn: true });
 }
 

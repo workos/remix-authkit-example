@@ -1,6 +1,6 @@
 # Remix integration example using AuthKit
 
-An example application demonstrating how to authenticate users with AuthKit and the WorkOS Node SDK.
+An example application demonstrating how to authenticate users with AuthKit and the authkit-remix helper library.
 
 > Refer to the [User Management](https://workos.com/docs/user-management) documentation for reference.
 

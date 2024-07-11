@@ -38,5 +38,5 @@ npm install
 Run the following command and navigate to [http://localhost:3000](http://localhost:3000).
 
 ```bash
-npm run dev
+PORT=3000 npm run dev
 ```

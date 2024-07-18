@@ -7,6 +7,7 @@ import type {
   ActionFunctionArgs,
   LinksFunction,
   LoaderFunctionArgs,
+  LoaderFunction,
 } from '@remix-run/node';
 import {
   Links,
@@ -23,22 +24,26 @@ import {
 import Footer from './components/footer';
 import SignInButton from './components/sign-in-button';
 
-import { withAuth, getSignInUrl, signOut } from '@workos-inc/authkit-remix';
+import {
+  getSignInUrl,
+  signOut,
+  authkitLoader,
+} from '@workos-inc/authkit-remix';
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
 ];
 
-export async function loader({ request }: LoaderFunctionArgs) {
-  const data = await withAuth(request, {
-    debug: true,
-  });
-
-  return json({
-    authorizationUrl: await getSignInUrl(),
-    ...data,
-  });
-}
+export const loader: LoaderFunction = (args: LoaderFunctionArgs) =>
+  authkitLoader(
+    args,
+    async () => {
+      return json({
+        signInUrl: await getSignInUrl(),
+      });
+    },
+    { debug: true }
+  );
 
 export function useRootLoaderData() {
   return useRouteLoaderData<typeof loader>('root');

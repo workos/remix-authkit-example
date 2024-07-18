@@ -7,7 +7,6 @@ import type {
   ActionFunctionArgs,
   LinksFunction,
   LoaderFunctionArgs,
-  LoaderFunction,
 } from '@remix-run/node';
 import {
   Links,
@@ -34,7 +33,7 @@ export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
 ];
 
-export const loader: LoaderFunction = (args: LoaderFunctionArgs) =>
+export const loader = (args: LoaderFunctionArgs) =>
   authkitLoader(
     args,
     async () => {

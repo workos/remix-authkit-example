@@ -2,9 +2,9 @@ import { Text, Heading, TextField, Flex, Box } from '@radix-ui/themes';
 
 import { useLoaderData } from '@remix-run/react';
 import { authkitLoader } from '@workos-inc/authkit-remix';
-import type { LoaderFunctionArgs, LoaderFunction } from '@remix-run/node';
+import type { LoaderFunctionArgs } from '@remix-run/node';
 
-export const loader: LoaderFunction = (args: LoaderFunctionArgs) =>
+export const loader = (args: LoaderFunctionArgs) =>
   authkitLoader(args, { ensureSignedIn: true });
 
 export default function AccountPage() {

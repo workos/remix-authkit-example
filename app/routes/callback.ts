@@ -1,3 +1,3 @@
-import { authLoader } from "@workos-inc/authkit-remix";
+import { authLoader } from '@workos-inc/authkit-remix';
 
 export const loader = authLoader();

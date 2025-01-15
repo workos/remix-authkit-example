@@ -1,12 +1,8 @@
 // Import the base CSS styles for the radix-ui components.
-import "@radix-ui/themes/styles.css";
-import { Theme, Card, Container, Flex, Button, Box } from "@radix-ui/themes";
+import '@radix-ui/themes/styles.css';
+import { Theme, Card, Container, Flex, Button, Box } from '@radix-ui/themes';
 
-import type {
-  ActionFunctionArgs,
-  LinksFunction,
-  LoaderFunctionArgs,
-} from "@remix-run/node";
+import type { ActionFunctionArgs, LinksFunction, LoaderFunctionArgs } from '@remix-run/node';
 import {
   Links,
   Link,
@@ -17,16 +13,12 @@ import {
   ScrollRestoration,
   useRouteLoaderData,
   json,
-} from "@remix-run/react";
+} from '@remix-run/react';
 
-import Footer from "./components/footer";
-import SignInButton from "./components/sign-in-button";
+import Footer from './components/footer';
+import SignInButton from './components/sign-in-button';
 
-import {
-  getSignInUrl,
-  signOut,
-  authkitLoader,
-} from "@workos-inc/authkit-remix";
+import { getSignInUrl, signOut, authkitLoader } from '@workos-inc/authkit-remix';
 
 export const links: LinksFunction = () => [];
 
@@ -38,11 +30,11 @@ export const loader = (args: LoaderFunctionArgs) =>
         signInUrl: await getSignInUrl(),
       });
     },
-    { debug: true }
+    { debug: true },
   );
 
 export function useRootLoaderData() {
-  return useRouteLoaderData<typeof loader>("root");
+  return useRouteLoaderData<typeof loader>('root');
 }
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -63,12 +55,8 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
-        <Theme
-          accentColor="iris"
-          panelBackground="solid"
-          style={{ backgroundColor: "var(--gray-1)" }}
-        >
-          <Container style={{ backgroundColor: "var(--gray-1)" }}>
+        <Theme accentColor="iris" panelBackground="solid" style={{ backgroundColor: 'var(--gray-1)' }}>
+          <Container style={{ backgroundColor: 'var(--gray-1)' }}>
             <Flex direction="column" gap="5" p="5" height="100vh">
               <Box asChild flexGrow="1">
                 <Card size="4">

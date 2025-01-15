@@ -8,23 +8,15 @@ export default function Footer() {
           <Heading size="4" mb="1">
             Documentation
           </Heading>
-          <Text color="gray">
-            View integration guides and SDK documentation.
-          </Text>
+          <Text color="gray">View integration guides and SDK documentation.</Text>
         </a>
       </Card>
       <Card size="4" asChild variant="classic">
-        <a
-          href="https://workos.com/docs/reference"
-          rel="noreferrer"
-          target="_blank"
-        >
+        <a href="https://workos.com/docs/reference" rel="noreferrer" target="_blank">
           <Heading size="4" mb="1">
             API Reference
           </Heading>
-          <Text color="gray">
-            Every WorkOS API method and endpoint documented.
-          </Text>
+          <Text color="gray">Every WorkOS API method and endpoint documented.</Text>
         </a>
       </Card>
       <Card size="4" asChild variant="classic">

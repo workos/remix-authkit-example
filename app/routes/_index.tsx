@@ -28,9 +28,7 @@ export default function Index() {
     <Flex direction="column" align="center" gap="2">
       {user ? (
         <>
-          <Heading size="8">
-            Welcome back{user?.firstName && `, ${user?.firstName}`}.
-          </Heading>
+          <Heading size="8">Welcome back{user?.firstName && `, ${user?.firstName}`}.</Heading>
           <Text size="5" color="gray">
             You are now authenticated into the application.
           </Text>

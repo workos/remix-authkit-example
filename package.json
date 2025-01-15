@@ -12,7 +12,8 @@
     "start-local-dev": "rm -rf .cache && npm run prepare && npm run dev",
     "start": "remix-serve ./build/index.js",
     "typecheck": "tsc",
-    "prepare": "relative-deps"
+    "prepare": "relative-deps",
+    "prettier": "prettier \"{app,__tests__}/**/*.{js,ts,tsx}\" --check"
   },
   "dependencies": {
     "@radix-ui/themes": "^3.0.5",
@@ -39,6 +40,12 @@
     "typescript": "^5.7.3",
     "vite": "^5.4.11",
     "vite-tsconfig-paths": "^5.1.4"
+  },
+  "prettier": {
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "trailingComma": "all",
+    "printWidth": 120
   },
   "engines": {
     "node": ">=18.0.0"

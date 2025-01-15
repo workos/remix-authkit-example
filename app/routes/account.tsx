@@ -4,8 +4,7 @@ import { useLoaderData } from '@remix-run/react';
 import { authkitLoader } from '@workos-inc/authkit-remix';
 import type { LoaderFunctionArgs } from '@remix-run/node';
 
-export const loader = (args: LoaderFunctionArgs) =>
-  authkitLoader(args, { ensureSignedIn: true });
+export const loader = (args: LoaderFunctionArgs) => authkitLoader(args, { ensureSignedIn: true });
 
 export default function AccountPage() {
   const { user, role } = useLoaderData<typeof loader>();

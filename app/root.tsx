@@ -12,7 +12,6 @@ import {
   Scripts,
   ScrollRestoration,
   useRouteLoaderData,
-  json,
 } from '@remix-run/react';
 
 import Footer from './components/footer';
@@ -26,9 +25,9 @@ export const loader = (args: LoaderFunctionArgs) =>
   authkitLoader(
     args,
     async () => {
-      return json({
+      return {
         signInUrl: await getSignInUrl(),
-      });
+      };
     },
     { debug: true },
   );

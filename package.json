@@ -5,28 +5,29 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix vite:build",
-    "dev": "remix vite:dev",
+    "build": "react-router build",
+    "dev": "react-router dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "reset": "rm -rf node_modules && rm -rf .cache && npm i",
     "start-local-dev": "rm -rf .cache && npm run prepare && npm run dev",
-    "start": "remix-serve ./build/server/index.js",
-    "typecheck": "tsc",
+    "start": "react-router-serve ./build/server/index.js",
+    "typecheck": "react-router typegen && tsc",
     "prepare": "relative-deps",
     "prettier": "prettier \"{app,__tests__}/**/*.{js,ts,tsx}\" --check"
   },
   "dependencies": {
     "@radix-ui/themes": "^3.0.5",
-    "@remix-run/node": "^2.15.2",
-    "@remix-run/react": "^2.15.2",
-    "@remix-run/serve": "^2.15.2",
+    "@react-router/fs-routes": "^7.2.0",
+    "@react-router/node": "^7.2.0",
+    "@react-router/serve": "^7.2.0",
     "@workos-inc/authkit-remix": "0.7.1",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router": "^7.2.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.15.2",
+    "@react-router/dev": "^7.0.0",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^7.13.1",

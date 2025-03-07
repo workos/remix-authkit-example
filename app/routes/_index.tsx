@@ -1,6 +1,6 @@
-import type { ActionFunctionArgs, MetaFunction } from '@remix-run/node';
+import type { ActionFunctionArgs, MetaFunction } from 'react-router';
 import { Button, Flex, Heading, Text } from '@radix-ui/themes';
-import { Link } from '@remix-run/react';
+import { Link } from 'react-router';
 import SignInButton from '~/components/sign-in-button';
 import { useRootLoaderData } from '~/root';
 import { signOut } from '@workos-inc/authkit-remix';

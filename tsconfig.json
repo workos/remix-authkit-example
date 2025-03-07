@@ -2,7 +2,8 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"],
   "compilerOptions": {
-    "types": ["@remix-run/node", "vite/client"],
+    "types": ["@react-router/node", "vite/client"],
+    "rootDirs": [".", "./.react-router/types"],
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "isolatedModules": true,
     "esModuleInterop": true,

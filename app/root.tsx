@@ -2,17 +2,8 @@
 import '@radix-ui/themes/styles.css';
 import { Theme, Card, Container, Flex, Button, Box } from '@radix-ui/themes';
 
-import type { ActionFunctionArgs, LinksFunction, LoaderFunctionArgs } from '@remix-run/node';
-import {
-  Links,
-  Link,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-  useRouteLoaderData,
-} from '@remix-run/react';
+import type { ActionFunctionArgs, LinksFunction, LoaderFunctionArgs } from 'react-router';
+import { Links, Link, Meta, Outlet, Scripts, ScrollRestoration, useRouteLoaderData } from 'react-router';
 
 import Footer from './components/footer';
 import SignInButton from './components/sign-in-button';
@@ -53,7 +44,6 @@ export default function App() {
       <body>
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
         <Theme accentColor="iris" panelBackground="solid" style={{ backgroundColor: 'var(--gray-1)' }}>
           <Container style={{ backgroundColor: 'var(--gray-1)' }}>
             <Flex direction="column" gap="5" p="5" height="100vh">

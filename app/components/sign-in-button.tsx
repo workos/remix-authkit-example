@@ -1,5 +1,5 @@
 import { Button, Flex } from '@radix-ui/themes';
-import { Form } from '@remix-run/react';
+import { Form } from 'react-router';
 import { useRootLoaderData } from '~/root';
 
 export default function SignInButton({ large }: { large?: boolean }) {

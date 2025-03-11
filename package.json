@@ -5,28 +5,27 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix build",
-    "dev": "remix dev",
+    "build": "remix vite:build",
+    "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "reset": "rm -rf node_modules && rm -rf .cache && npm i",
     "start-local-dev": "rm -rf .cache && npm run prepare && npm run dev",
-    "start": "remix-serve ./build/index.js",
+    "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc",
     "prepare": "relative-deps"
   },
   "dependencies": {
     "@radix-ui/themes": "^3.0.5",
-    "@remix-run/css-bundle": "^2.7.2",
-    "@remix-run/node": "^2.7.2",
-    "@remix-run/react": "^2.7.2",
-    "@remix-run/serve": "^2.7.2",
-    "@workos-inc/authkit-remix": "0.4.1",
+    "@remix-run/node": "^2.16.0",
+    "@remix-run/react": "^2.16.0",
+    "@remix-run/serve": "^2.16.0",
+    "@workos-inc/authkit-remix": "^0.8.0",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.7.2",
+    "@remix-run/dev": "^2.16.0",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
@@ -37,7 +36,9 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "relative-deps": "^1.0.7",
-    "typescript": "^5.1.6"
+    "typescript": "^5.8.2",
+    "vite": "^5.4.13",
+    "vite-tsconfig-paths": "^5.1.4"
   },
   "engines": {
     "node": ">=18.0.0"

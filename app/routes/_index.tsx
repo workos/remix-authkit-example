@@ -1,16 +1,16 @@
-import type { ActionFunctionArgs, MetaFunction } from '@remix-run/node';
-import { Button, Flex, Heading, Text } from '@radix-ui/themes';
-import { Link } from '@remix-run/react';
-import SignInButton from '~/components/sign-in-button';
-import { useRootLoaderData } from '~/root';
-import { signOut } from '@workos-inc/authkit-remix';
+import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
+import { Button, Flex, Heading, Text } from "@radix-ui/themes";
+import { Link } from "@remix-run/react";
+import SignInButton from "~/components/sign-in-button";
+import { useRootLoaderData } from "~/root";
+import { signOut } from "@workos-inc/authkit-remix";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: 'Example AuthKit Authenticated App' },
+    { title: "Example AuthKit Authenticated App" },
     {
-      name: 'description',
-      content: 'Example Remix application demonstrating how to use AuthKit.',
+      name: "description",
+      content: "Example Remix application demonstrating how to use AuthKit.",
     },
   ];
 };
@@ -36,7 +36,7 @@ export default function Index() {
           </Text>
           <Flex align="center" gap="3" mt="4">
             <Button asChild size="3" variant="soft">
-              <Link to="/account">View account</Link>
+              <Link to="./account">View account</Link>
             </Button>
             <SignInButton large />
           </Flex>

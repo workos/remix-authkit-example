@@ -21,22 +21,13 @@ import {
 import Footer from "./components/footer";
 import SignInButton from "./components/sign-in-button";
 
-import {
-  getSignInUrl,
-  signOut,
-  authkitLoader,
-} from "@workos-inc/authkit-remix";
+import { signOut, authkitLoader } from "@workos-inc/authkit-remix";
 
 export const links: LinksFunction = () => [];
 
 export const loader = (args: LoaderFunctionArgs) =>
   authkitLoader(
     args,
-    async () => {
-      return {
-        signInUrl: await getSignInUrl(),
-      };
-    },
     { debug: true }
   );
 

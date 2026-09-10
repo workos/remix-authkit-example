@@ -1,6 +1,7 @@
 {
   "name": "remix-authkit-example",
   "version": "1.0.0",
+  "packageManager": "npm@9.9.4",
   "private": true,
   "sideEffects": false,
   "type": "module",
